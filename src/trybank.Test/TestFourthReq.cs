@@ -37,6 +37,14 @@ public class TestFourthReq
   [InlineData(0, 0)]
   public void TestTransferWithoutBalance(int balance, int value)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    trybank.RegisterAccount(1, 1, 0);
+
+    trybank.Login(0, 0, 0);
+    trybank.Deposit(balance - 1);
+
+    Action act = () => trybank.Transfer(1, 1, value);
+    act.Should().Throw<InvalidOperationException>();
   }
 }
