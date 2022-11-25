@@ -25,7 +25,12 @@ public class TestFourthReq
   [InlineData(0)]
   public void TestTransferWithoutLogin(int value)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    trybank.RegisterAccount(1, 1, 0);
+
+    Action act = () => trybank.Transfer(1, 1, value);
+    act.Should().Throw<AccessViolationException>();
   }
 
   [Theory(DisplayName = "Deve lançar uma exceção de usuário não logado")]
