@@ -51,7 +51,10 @@ public class TestSecondReq
   [InlineData(0, 0, 0)]
   public void TestLogoutSucess(int number, int agency, int pass)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(number, agency, pass);
+    trybank.Login(number, agency, pass);
+    trybank.Logout();
   }
 
   [Theory(DisplayName = "Deve retornar exceção ao sair quando não está logado")]
