@@ -31,7 +31,10 @@ public class TestSecondReq
   [InlineData(0, 0, 0)]
   public void TestLoginExceptionWrongPass(int number, int agency, int pass)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(number, agency, pass);
+    Action act = () => trybank.Login(number, agency, pass + 1);
+    act.Should().Throw<ArgumentException>();
   }
 
   [Theory(DisplayName = "Deve retornar exceção ao digitar conta que não existe")]
