@@ -66,7 +66,10 @@ public class TestThirdReq
   [InlineData(0)]
   public void TestWithdrawWithoutLogin(int value)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    Action act = () => trybank.Withdraw(value);
+    act.Should().Throw<AccessViolationException>();
   }
 
   [Theory(DisplayName = "Deve lançar uma exceção de usuário não logado")]
