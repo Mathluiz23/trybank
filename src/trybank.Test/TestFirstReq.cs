@@ -20,6 +20,9 @@ public class TestFirstReq
   [InlineData(0, 0, 0)]
   public void TestRegisterAccountException(int number, int agency, int pass)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(number, agency, pass);
+    Action act = () => trybank.RegisterAccount(number, agency, pass);
+    act.Should().Throw<ArgumentException>();
   }
 }
