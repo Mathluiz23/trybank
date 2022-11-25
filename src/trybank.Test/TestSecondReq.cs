@@ -20,7 +20,11 @@ public class TestSecondReq
   [InlineData(0, 0, 0)]
   public void TestLoginExceptionLogged(int number, int agency, int pass)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(number, agency, pass);
+    trybank.Login(number, agency, pass);
+    Action act = () => trybank.Login(number, agency, pass);
+    act.Should().Throw<AccessViolationException>();
   }
 
   [Theory(DisplayName = "Deve retornar exceção ao errar a senha")]
