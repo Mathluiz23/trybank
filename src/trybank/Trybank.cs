@@ -82,7 +82,11 @@ public class Trybank
 
   public void Deposit(int value)
   {
-    throw new NotImplementedException();
+    if (!Logged)
+    {
+      throw new AccessViolationException("Usuário não está logado!");
+    }
+    Bank[loggedUser, 3] += value;
   }
 
   public void Withdraw(int value)
