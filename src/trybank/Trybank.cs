@@ -58,7 +58,12 @@ public class Trybank
 
   public void Logout()
   {
-    throw new NotImplementedException();
+    if (!Logged)
+    {
+      throw new AccessViolationException("Usuário não está logado!");
+    }
+    Logged = false;
+    loggedUser = -99;
   }
 
   public int CheckBalance()
