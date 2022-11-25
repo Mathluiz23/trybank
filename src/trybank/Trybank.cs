@@ -88,7 +88,6 @@ public class Trybank
     }
     Bank[loggedUser, 3] += value;
   }
-
   public void Withdraw(int value)
   {
     throw new NotImplementedException();
