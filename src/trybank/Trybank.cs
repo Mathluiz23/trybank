@@ -90,6 +90,14 @@ public class Trybank
   }
   public void Withdraw(int value)
   {
-    throw new NotImplementedException();
+    if (!Logged)
+    {
+      throw new AccessViolationException("Usuário não está logado!");
+    }
+    if (Bank[loggedUser, 3] < value)
+    {
+      throw new InvalidOperationException("Saldo insuficiente");
+    }
+    Bank[loggedUser, 3] -= value;
   }
 }
