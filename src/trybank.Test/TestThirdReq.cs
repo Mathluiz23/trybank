@@ -33,7 +33,11 @@ public class TestThirdReq
   [InlineData(0)]
   public void TestDepositSucess(int value)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    trybank.Login(0, 0, 0);
+    trybank.Deposit(value);
+    trybank.Bank[0, 3].Should().Be(value);
   }
 
   [Theory(DisplayName = "Deve lançar uma exceção de usuário não logado")]
