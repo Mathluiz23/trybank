@@ -41,7 +41,10 @@ public class TestSecondReq
   [InlineData(0, 0, 0)]
   public void TestLoginExceptionNotFounded(int number, int agency, int pass)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(number, agency, pass);
+    Action act = () => trybank.Login(number + 1, agency, pass);
+    act.Should().Throw<ArgumentException>();
   }
 
   [Theory(DisplayName = "Deve sair de uma conta!")]
