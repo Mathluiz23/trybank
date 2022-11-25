@@ -22,7 +22,11 @@ public class TestThirdReq
   [InlineData(0)]
   public void TestCheckBalanceWithoutLogin(int balance)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    trybank.Bank[0, 3] = balance;
+    Action act = () => trybank.CheckBalance();
+    act.Should().Throw<AccessViolationException>();
   }
 
   [Theory(DisplayName = "Deve depositar um saldo em uma conta logada")]
