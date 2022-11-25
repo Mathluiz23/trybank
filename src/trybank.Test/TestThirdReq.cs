@@ -76,6 +76,12 @@ public class TestThirdReq
   [InlineData(0, 0)]
   public void TestWithdrawWithoutBalance(int balance, int value)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    trybank.Login(0, 0, 0);
+    trybank.Deposit(balance);
+
+    Action act = () => trybank.Withdraw(value + 1);
+    act.Should().Throw<InvalidOperationException>();
   }
 }
