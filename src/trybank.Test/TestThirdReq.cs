@@ -44,7 +44,10 @@ public class TestThirdReq
   [InlineData(0)]
   public void TestDepositWithoutLogin(int value)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(0, 0, 0);
+    Action act = () => trybank.Deposit(value);
+    act.Should().Throw<AccessViolationException>();
   }
 
   [Theory(DisplayName = "Deve sacar um valor em uma conta logada")]
