@@ -61,7 +61,9 @@ public class TestSecondReq
   [InlineData(0, 0, 0)]
   public void TestLogoutExceptionNotLogged(int number, int agency, int pass)
   {
-    throw new NotImplementedException();
+    var trybank = new Trybank();
+    trybank.RegisterAccount(number, agency, pass);
+    Action act = () => trybank.Logout();
+    act.Should().Throw<AccessViolationException>();
   }
-
 }
