@@ -29,7 +29,7 @@ dotnet test
 </details>
 
 
-# Projeto Trybank
+# Projeto Trybank 🏦💰💱
 
 Este projeto consite na implementação de um serviço de banco financeiro. Onde o objetivo é construir um banco que contenha contas de usuários. 
 Sendo possível criar e validar os processos de cadastro, login, saque, depósito e transferência do saldo dessas contas.
@@ -50,7 +50,7 @@ Caso contrário, a função armazena os dados no array `Bank` na próxima posiç
 </details>
 
 <details>
-  <summary>Testes</summary><br />
+  <summary>Testes ✔️</summary><br />
 
 Teste implementando para verificar se a função `RegisterAccount` cadastra os dados passados por parâmetro e se retorna uma exceção quando é passada uma conta que já existe.
 
@@ -61,7 +61,7 @@ Teste implementando para verificar se a função `RegisterAccount` cadastra os d
 Crie a lógica do seu requisito no arquivo src/trybank/Trybank.cs.
 
 <details>
-  <summary>O programa permite o Login da pessoa usuária</summary><br />
+  <summary>O programa permite o Login da pessoa usuária 👨💻</summary><br />
 
 O estado de pessoa usuária logada é controlado pela variável `Logged`
 
@@ -78,7 +78,7 @@ O estado de pessoa usuária logada é controlado pela variável `Logged`
 </details>
 
 <details>
-  <summary>O programa deve permitir o Logout do usário</summary><br />
+  <summary>O programa permite o Logout do usário 👨💻</summary><br />
 
 O estado de pessoa usuária logada é controlado pela variável `Logged`
 
@@ -89,7 +89,7 @@ O estado de pessoa usuária logada é controlado pela variável `Logged`
 </details>
 
 <details>
-  <summary>Teste Login</summary><br />
+  <summary>Teste Login ✔️</summary><br />
 
 Teste implementado para verificar se a função `Login` consegue alterar o estado da variável Logged. 
 Se retorna uma exceção quando é executada com uma conta já logada, quando uma senha incorreta é informada ou quando uma combinação de número e agência não existe no array Bank.
@@ -97,7 +97,7 @@ Se retorna uma exceção quando é executada com uma conta já logada, quando um
 </details>
 
 <details>
-  <summary>Testes Logout</summary><br />
+  <summary>Testes Logout ✔️</summary><br />
 
 Teste implementado para verificar se a função`Logout` consegue alterar o estado da variável Logged e se retorna uma exceção quando é executada sem uma conta já logada.
 
@@ -106,7 +106,7 @@ Teste implementado para verificar se a função`Logout` consegue alterar o estad
 ### Checar o saldo, depositar e sacar dinheiro
 
 <details>
-  <summary>O programa permite verificar o saldo na conta da pessoa usária logada</summary><br />
+  <summary>O programa permite verificar o saldo na conta da pessoa usária logada 🤑</summary><br />
 
 Lógica implementada na função `CheckBalance()`
 
@@ -117,7 +117,7 @@ Lógica implementada na função `CheckBalance()`
 </details>
 
 <details>
-  <summary>O programa deve permite o depósito de um valor na conta da pessoa usária logada</summary><br />
+  <summary>O programa deve permite o depósito de um valor na conta da pessoa usária logada 🤑💰</summary><br />
 
 Lógica implementada na função `Deposit()`
 
@@ -128,7 +128,7 @@ Lógica implementada na função `Deposit()`
 </details>
 
 <details>
-  <summary>O programa também permite o saque de um valor na conta da pessoa usuária logada</summary><br />
+  <summary>O programa também permite o saque de um valor na conta da pessoa usuária logada 💸</summary><br />
 
 Lógica implementada na função `Withdraw()`
 
@@ -140,21 +140,21 @@ Se o saldo da conta da pessoa usuária logada for insuficiente para fazer o saqu
 </details>
 
 <details>
-  <summary>Testes para Checar o Saldo</summary><br />
+  <summary>Testes para Checar o Saldo ✔️</summary><br />
 
 Teste implementado para verificar se a função `CheckBalance` retorna corretamente o saldo de uma conta já logada e se retorna uma exceção quando é executada sem uma conta logada.
 
 </details>
 
 <details>
-  <summary>Testes para o Deposito</summary><br />
+  <summary>Testes para o Deposito 💰</summary><br />
 
 Teste implementado para verificar se a função `Deposit`  altera o saldo de uma conta já logada e se retorna uma exceção quando é executada sem uma conta logada.
 
 </details>
 
 <details>
-  <summary>Testes para o Saque</summary><br />
+  <summary>Testes para o Saque ✔️</summary><br />
 
 Teste implementado para verificar se a função `Withdraw` altera o saldo de uma conta já logada, se retorna uma exceção quando é executada sem uma conta logada ou quando o saldo da conta não é suficiente.
 
@@ -163,7 +163,7 @@ Teste implementado para verificar se a função `Withdraw` altera o saldo de uma
 ### Transferência entre contas
 
 <details>
-  <summary>O programa também permite a transferência de saldo entre uma pessoa usuária logada e uma conta existente</summary><br />
+  <summary>O programa também permite a transferência de saldo entre uma pessoa usuária logada e uma conta existente 💱</summary><br />
 
 **Se não houver uma pessoa usuária logada**, será lançada uma exceção do tipo `AccessViolationException`, com a mensagem `Usuário já está logado`
 
@@ -174,7 +174,7 @@ Se o saldo da conta da pessoa usuária logada for insuficiente para fazer a tran
 </details>
 
 <details>
-  <summary>Testes de Transferência</summary><br />
+  <summary>Testes de Transferência ✔️</summary><br />
 
 Implementado teste para verificar se a função `Transfer` altera o saldo de uma conta já logada e move o valor para a conta passada por parâmetro, se retorna uma exceção quando é executada sem uma conta logada ou quando o saldo da conta logada não é suficiente.
 
